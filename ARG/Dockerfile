@@ -1,4 +1,7 @@
 ARG Version
 From almalinux:${Version}
-Run yum install nginx -y
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ARG GREETING="Hello from Arun"
+ENV GREET=$(GREETING)
+RUN echo "$GREETING"
+RUN echo "$Version"
+
